@@ -30,7 +30,8 @@ namespace Template_RealEstate_20052019.Areas.BackEnd.Controllers
         [AllowAnonymous]
         public IActionResult Index(User user)
         {
-            if (_userRepository.Validate(user) == null)
+            user = _userRepository.Validate(user);
+            if (user == null)
             {
                 SetFlashMessage("Thông tin đăng nhập không chính xác. Hãy thử lại", false);
 
