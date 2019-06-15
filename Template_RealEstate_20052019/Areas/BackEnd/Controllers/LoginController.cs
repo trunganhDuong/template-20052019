@@ -38,7 +38,7 @@ namespace Template_RealEstate_20052019.Areas.BackEnd.Controllers
             }
             SetAccountSession(user);
 
-            return Redirect(Url.Action("Index", "Home", new { Area = "BackEnd" }));
+            return Redirect(Url.Action("Index", "Utility", new { Area = "BackEnd" }));
         }
 
         
