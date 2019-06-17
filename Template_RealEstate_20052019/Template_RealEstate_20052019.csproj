@@ -6,6 +6,13 @@
 	<ServerGarbageCollection>false</ServerGarbageCollection>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\admin\lib\bootstrap-colorpicker\**" />
+    <Content Remove="wwwroot\admin\lib\bootstrap-colorpicker\**" />
+    <EmbeddedResource Remove="wwwroot\admin\lib\bootstrap-colorpicker\**" />
+    <None Remove="wwwroot\admin\lib\bootstrap-colorpicker\**" />
+  </ItemGroup>
+
   
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
@@ -23,48 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.editorconfig" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.github\CODE_OF_CONDUCT.md" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.github\CONTRIBUTING.md" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.github\ISSUE_TEMPLATE.md" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.github\PULL_REQUEST_TEMPLATE.md" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.jshintrc" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.npmignore" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\.travis.yml" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css.map" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css.map" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.min.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\helpers\code\index.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\api.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\example.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\01_basic.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\02_component.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\03_component_options.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\04_events.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\05_transparent.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\06_horizontal.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\07_inline.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\08_palette.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\09_size.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\10_disabled.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\examples\11_modal.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\includes\social.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\layout.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\docs\pages\index.hbs" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\Gruntfile.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\LICENSE" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\README.md" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\serve.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\spec\color\hex-color-spec.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\js\colorpicker-color.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\js\colorpicker-component.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\js\colorpicker-defaults.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\js\colorpicker-plugin-wrapper.js" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\less\colorpicker.less" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\src\sass\_colorpicker.scss" />
-    <None Include="wwwroot\admin\lib\bootstrap-colorpicker\yarn.lock" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.editorconfig" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.github\ISSUE_TEMPLATE.md" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.github\PULL_REQUEST_TEMPLATE.md" />
