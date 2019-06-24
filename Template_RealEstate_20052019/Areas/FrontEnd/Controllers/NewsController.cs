@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
     {
         private readonly IArticleRepository _articleRepository;
 
-        public NewsController(IArticleRepository articleRepository)
+        public NewsController(IArticleRepository articleRepository, IConfiguration configuration) : base(configuration)
         {
             this._articleRepository = articleRepository;
         }
@@ -28,7 +29,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
             var article = _articleRepository.GetById(id);
             SetPageTitle("Tin tức");
 
-            return View(article);
+            return View(GetRelativeViewPath("Detail.cshtml"), article);
         }
     }
 }

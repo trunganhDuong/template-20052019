@@ -21,6 +21,7 @@ namespace Template_RealEstate_20052019
 {
     public class Startup
     {
+        public static string TemplateName { get; private set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -42,6 +43,8 @@ namespace Template_RealEstate_20052019
                 options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            TemplateName = Configuration.GetSection("TemplateName").Get<string>();
             services.Configure<ProjectInformation>(Configuration.GetSection("ProjectInformartion"));
             services.Configure<Location>(Configuration.GetSection("Location"));
             services.Configure<DbConfig>(Configuration.GetSection("DbConfig"));

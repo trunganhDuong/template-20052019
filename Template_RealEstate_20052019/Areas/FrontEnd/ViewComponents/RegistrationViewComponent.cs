@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using Template_RealEstate_20052019.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class RegistrationViewComponent : ViewComponent
+    public class RegistrationViewComponent : BaseViewComponent
     {
         private readonly IOptions<ContactInformation> _options;
 
-        public RegistrationViewComponent(IOptions<ContactInformation> options)
+        public RegistrationViewComponent(IOptions<ContactInformation> options, IConfiguration configuration) : base(configuration)
         {
             this._options = options;
         }
@@ -21,7 +22,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
         {
             var contactInfo = _options.Value;
 
-            return View(contactInfo);
+            return View(GetViewPath(), contactInfo);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,11 @@ using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class RecentPostViewComponent : ViewComponent
+    public class RecentPostViewComponent : BaseViewComponent
     {
         private readonly IArticleRepository _articleRepository;
 
-        public RecentPostViewComponent(IArticleRepository articleRepository)
+        public RecentPostViewComponent(IArticleRepository articleRepository, IConfiguration configuration) : base(configuration)
         {
             this._articleRepository = articleRepository;
         }
@@ -26,7 +27,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
                 IsPolicy = isPolicy
             });
 
-            return View(articles);
+            return View(GetViewPath(), articles);
         }
     }
 }

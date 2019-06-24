@@ -1,0 +1,191 @@
+﻿@using Template_RealEstate_20052019.Models
+@using Microsoft.Extensions.Options
+@inject IOptions<ContactInformation> contact
+
+<style>
+    .hotline-fixed.hotline-fixed-6 {
+        bottom: 100px;
+        opacity: 0.89;
+    }
+
+    .hotline-fixed-6 {
+        bottom: 20px;
+        right: 15px;
+        padding-left: 60px;
+    }
+
+    .hotline-fixed-6 {
+        background: #3ec1d5;
+        color: #fff;
+        width: 200px;
+        border-radius: 70px;
+        position: fixed;
+        box-sizing: border-box;
+        transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+        z-index: 9;
+        height: 44px;
+        border: 2px solid #fff;
+        line-height: 44px;
+        background: -webkit-linear-gradient(left, #c0ebf2, #3ec1d5);
+        background: -o-linear-gradient(right, #c0ebf2, #3ec1d5);
+        background: -moz-linear-gradient(right, #c0ebf2, #3ec1d5);
+        background: linear-gradient(to right, #c0ebf2, #3ec1d5);
+    }
+
+    .hotline-fixed, .v-hotline {
+        word-break: initial;
+    }
+
+    .hotline-fixed-6 a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .call-now {
+        position: absolute;
+        left: -39px;
+        top: -41px;
+    }
+
+    .mypage-alo-phone {
+        visibility: visible;
+        background-color: transparent;
+        width: 110px;
+        height: 110px;
+        cursor: pointer;
+        z-index: 200000 !important;
+    }
+
+    .animated.infinite {
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    .pulse.go {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+    }
+
+    .mypage-alo-ph-circle-fill {
+        width: 60px;
+        height: 60px;
+        top: 28px;
+        left: 28px;
+        position: absolute;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        background: #6dd0df;
+        opacity: .75 !important;
+    }
+
+    .mypage-alo-ph-circle {
+        width: 90px;
+        height: 90px;
+        top: 12px;
+        left: 12px;
+        position: absolute;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 2px solid #6dd0df;
+        opacity: .1;
+        opacity: .5;
+        background-color: #c0ebf2;
+        border-color: #fff;
+        border-width: 3px;
+    }
+
+    .mypage-alo-ph-img-circle {
+        width: 32px;
+        height: 32px;
+        top: 43px;
+        left: 43px;
+        position: absolute;
+        background: rgb(62, 193, 213) url(/phone.png) no-repeat center center;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        opacity: .7;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -o-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        background-size: 70%;
+    }
+
+    .zoomIn {
+        animation-name: zoomIn;
+    }
+
+    .animated {
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    .pulse {
+        animation-name: pulse;
+    }
+
+    .tada.go {
+        -webkit-animation-name: tada;
+        animation-name: tada;
+    }
+
+    .hotline-fixed-6-text {
+        float: left;
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 15px;
+    }
+
+    .hotline-fixed-6-text-title {
+        display: none;
+    }
+
+    .hotline-fixed-6 a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+</style>
+<div class="hotline-fixed hotline-fixed-6">
+    <a href="tel:0936422689" mypage="" class="call-now" rel="nofollow">
+        <div class="mypage-alo-phone">
+            <div class="animated infinite zoomIn mypage-alo-ph-circle go"></div>
+            <div class="animated infinite pulse mypage-alo-ph-circle-fill go"></div>
+            <div class="animated infinite tada mypage-alo-ph-img-circle go"></div>
+        </div>
+    </a>
+    <div class="hotline-fixed-6-text">
+        <div class="hotline-fixed-6-text-title">
+            Hotline
+        </div>
+        <div class="hotline-fixed-6-text-hotline">
+            <a href="tel:0977849974">0977.849.974</a>
+        </div>
+    </div>
+</div>

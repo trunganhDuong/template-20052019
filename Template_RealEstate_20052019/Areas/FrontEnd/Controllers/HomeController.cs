@@ -8,13 +8,10 @@ using System.Threading.Tasks;
 namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
 {
     [Area("FrontEnd")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly IConfiguration _configuration;
-
-        public HomeController(IConfiguration configuration)
+        public HomeController(IConfiguration configuration): base(configuration)
         {
-            this._configuration = configuration;
         }
         public async Task<IActionResult> Index()
         {

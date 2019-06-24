@@ -8,19 +8,16 @@ using Template_RealEstate_20052019.Areas.FrontEnd.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class SliderViewComponent : ViewComponent
+    public class SliderViewComponent : BaseViewComponent
     {
-        private readonly IConfiguration _configuration;
-
-        public SliderViewComponent(IConfiguration configuration)
+        public SliderViewComponent(IConfiguration configuration) : base(configuration)
         {
-            this._configuration = configuration;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var slides = _configuration.GetSection("Slider").Get<List<Slide>>();
 
-            return View(slides);
+            return View(GetViewPath(), slides);
         }
     }
 }

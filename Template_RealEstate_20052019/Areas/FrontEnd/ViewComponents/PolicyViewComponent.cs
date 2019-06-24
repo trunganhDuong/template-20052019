@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class PolicyViewComponent : ViewComponent
+    public class PolicyViewComponent : BaseViewComponent
     {
         private readonly IArticleRepository _articleRepository;
 
-        public PolicyViewComponent(IArticleRepository articleRepository)
+        public PolicyViewComponent(IArticleRepository articleRepository, IConfiguration configuration) : base(configuration)
         {
             this._articleRepository = articleRepository;
         }
@@ -25,7 +26,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
                 IsPolicy = true
             });
 
-            return View(policies);
+            return View(GetViewPath(), policies);
         }
     }
 }

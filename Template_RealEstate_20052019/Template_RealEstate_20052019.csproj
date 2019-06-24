@@ -25,7 +25,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\BackEnd\ViewComponents\" />
+    <Folder Include="Areas\FrontEnd\Views\05062019\" />
     <Folder Include="CkfinderData\" />
+    <Folder Include="wwwroot\05062019\" />
     <Folder Include="wwwroot\upload\" />
   </ItemGroup>
 
@@ -4754,10 +4756,10 @@
     <Content Update="Areas\BackEnd\Views\Policy\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\FrontEnd\Views\Policy\Detail.cshtml">
+    <Content Update="Areas\FrontEnd\Views\20052019\Policy\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\FrontEnd\Views\Shared\Components\Policy\Default.cshtml">
+    <Content Update="Areas\FrontEnd\Views\20052019\Shared\Components\Policy\Default.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

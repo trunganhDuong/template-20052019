@@ -11,11 +11,11 @@ using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class UtilityViewComponent : ViewComponent
+    public class UtilityViewComponent : BaseViewComponent
     {
         private readonly IUtilityRepository _utilityRepository;
 
-        public UtilityViewComponent(IUtilityRepository utilityRepository)
+        public UtilityViewComponent(IUtilityRepository utilityRepository, IConfiguration configuration) : base(configuration)
         {
             this._utilityRepository = utilityRepository;
         }
@@ -28,7 +28,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
                 PageSize = 20
             });
 
-            return View(utilities);
+            return View(GetViewPath(), utilities);
         }
     }
 }

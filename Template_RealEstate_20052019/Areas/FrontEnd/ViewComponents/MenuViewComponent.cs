@@ -8,26 +8,23 @@ using Template_RealEstate_20052019.Areas.FrontEnd.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class MenuViewComponent : ViewComponent
+    public class MenuViewComponent : BaseViewComponent
     {
-        private readonly IConfiguration _configuration;
-
-        public MenuViewComponent(IConfiguration configuration)
+        public MenuViewComponent(IConfiguration configuration) : base(configuration)
         {
-            this._configuration = configuration;
         }
         public async Task<IViewComponentResult> InvokeAsync(bool isNews = false)
         {
             List<Menu> menu = _configuration.GetSection("Menu").Get<List<Menu>>();
             if (isNews)
             {
-                foreach(var item in menu)
+                foreach (var item in menu)
                 {
                     item.Href = "/" + item.Href;
                 }
             }
 
-            return View(menu);
+            return View(GetViewPath(), menu);
         }
     }
 }

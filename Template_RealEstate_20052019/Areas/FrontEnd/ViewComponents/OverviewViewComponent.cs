@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -8,18 +9,18 @@ using Template_RealEstate_20052019.Areas.FrontEnd.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class OverviewViewComponent : ViewComponent
+    public class OverviewViewComponent : BaseViewComponent
     {
         private readonly IOptions<ProjectInformation> _options;
 
-        public OverviewViewComponent(IOptions<ProjectInformation> options)
+        public OverviewViewComponent(IOptions<ProjectInformation> options, IConfiguration configuration) : base(configuration)
         {
             this._options = options;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(_options.Value);
+            return View(GetViewPath(), _options.Value);
         }
     }
 }

@@ -8,20 +8,17 @@ using Template_RealEstate_20052019.Areas.FrontEnd.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
-    public class DesignViewComponent : ViewComponent
+    public class DesignViewComponent : BaseViewComponent
     {
-        private readonly IConfiguration _configuration;
-
-        public DesignViewComponent(IConfiguration configuration)
+        public DesignViewComponent(IConfiguration configuration) : base(configuration)
         {
-            this._configuration = configuration;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
             List<DesignDetail> details = _configuration.GetSection("Design").Get<List<DesignDetail>>();
 
-            return View(details);
+            return View(GetViewPath(), details);
         }
     }
 }

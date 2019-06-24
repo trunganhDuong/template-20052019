@@ -1,0 +1,45 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration configuration
+@{
+    var templateName = configuration.GetSection("TemplateName").Get<string>();
+    templateName = string.IsNullOrEmpty(templateName) ? "20052019" : templateName;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="~/@templateName/css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="~/@templateName/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="~/@templateName/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/@templateName/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/@templateName/css/style.css">
+    <!-- =======================================================
+      Theme Name: eBusiness
+      Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+    @await Html.PartialAsync($"~/Areas/FrontEnd/Views/{templateName}/Shared/_HeaderNews.cshtml")
+
+    @RenderBody()
+
+    <script src="~/@templateName/js/jquery.min.js"></script>
+    <script src="~/@templateName/js/jquery.easing.min.js"></script>
+    <script src="~/@templateName/js/bootstrap.min.js"></script>
+    <script src="~/@templateName/js/wow.js"></script>
+    <script src="~/@templateName/js/jquery.bxslider.min.js"></script>
+    <script src="~/@templateName/js/custom.js"></script>
+    <script src="~/@templateName/js/contactform.js"></script>
+</body>
+
+</html>
