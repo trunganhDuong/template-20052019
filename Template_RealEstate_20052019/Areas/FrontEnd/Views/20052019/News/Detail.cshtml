@@ -3,8 +3,7 @@
 @inject IConfiguration configuration
 @model Template_RealEstate_20052019.Models.Article
 @{
-    var templateName = configuration.GetSection("TemplateName").Get<string>();
-    templateName = string.IsNullOrEmpty(templateName) ? "20052019" : templateName;
+    var templateName = StaticVariables.TemplateName;
 
     Layout = $"~/Areas/FrontEnd/Views/{templateName}/Shared/_LayoutNews.cshtml";
 }

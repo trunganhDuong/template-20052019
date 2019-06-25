@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Template_RealEstate_20052019.Models;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
 {
@@ -38,9 +39,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
         {
             get
             {
-                var result = _configuration.GetSection("TemplateName").Get<string>();
-
-                return !string.IsNullOrEmpty(result) ? result : string.Empty;
+                return StaticVariables.TemplateName;
             }
         }
 

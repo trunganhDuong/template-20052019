@@ -1,0 +1,53 @@
+﻿@using Template_RealEstate_20052019.Areas.FrontEnd.Models
+@model Location
+@using Template_RealEstate_20052019.Models
+@{
+    var templateName = StaticVariables.TemplateName;
+}
+
+@if (Model != null)
+{
+    <!-- Start About area -->
+    <div id="location" class="about-area area-padding section-padding">
+        <div class="container">
+            <div class="page-title text-center">
+                <h1>Vị trí</h1>
+                <p></p>
+                <hr class="pg-titl-bdr-btm"></hr>
+            </div>
+            <div class="row">
+                <!-- single-well start-->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="well-left">
+                        <div class="service-text">
+                            <h4 class="sec-head">@Model.Header</h4>
+                            <p>
+                                @Html.Raw(Model.Description)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- single-well end-->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @if (!string.IsNullOrEmpty(Model.MapImage))
+                    {
+                        <a href="#">
+                            <img src="@templateName/@Model.MapImage" alt="">
+                        </a>
+                    }
+                </div>
+                <!-- End col-->
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.NearbyImage))
+            {
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <img src="@templateName/@Model.NearbyImage" alt="" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- End About area -->
+}

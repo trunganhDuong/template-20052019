@@ -1,0 +1,27 @@
+﻿@using Template_RealEstate_20052019.Areas.FrontEnd.Models
+@using Microsoft.Extensions.Options
+@model List<Slide>
+@inject IOptions<ProjectInformation> projectInformation
+
+@if (Model != null && Model.Any())
+{
+    var img = Model.FirstOrDefault()?.ImageName ?? string.Empty;
+
+    <style>
+        #banner {
+            background: url('/..@(img)') no-repeat;
+        }
+    </style>
+    <div id="banner" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <h1 class="small">@projectInformation.Value.ProjectName</h1>
+                    <p class="big">@projectInformation.Value.Address</p>
+                    <a href="#contact" class="btn btn-banner">Đăng ký nhận thông tin dự án<i class="fa fa-send"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--BANNER END-->
+}

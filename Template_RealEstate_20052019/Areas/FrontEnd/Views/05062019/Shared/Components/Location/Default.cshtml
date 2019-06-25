@@ -1,12 +1,11 @@
 ﻿@using Template_RealEstate_20052019.Areas.FrontEnd.Models
 @model Location
 
-@using Microsoft.Extensions.Configuration
-@inject IConfiguration configuration
+@using Template_RealEstate_20052019.Models
 @{
-    var templateName = configuration.GetSection("TemplateName").Get<string>();
-    templateName = string.IsNullOrEmpty(templateName) ? "20052019" : templateName;
+    var templateName = StaticVariables.TemplateName;
 }
+
 
 @if (Model != null)
 {

@@ -17,7 +17,7 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
         {
             ViewBag.Title = _configuration.GetSection("PageTitle").Get<string>();
 
-            return View();
+            return View($"~/Areas/FrontEnd/Views/{TemplateName}/Home/Index.cshtml");
         }
     }
 }

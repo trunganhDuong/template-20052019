@@ -3,8 +3,7 @@
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration configuration
 @{
-    var templateName = configuration.GetSection("TemplateName").Get<string>();
-    templateName = string.IsNullOrEmpty(templateName) ? "20052019" : templateName;
+    var templateName = StaticVariables.TemplateName;
 
     Layout = $"~/Areas/FrontEnd/Views/{templateName}/Shared/_LayoutNews.cshtml";
 }

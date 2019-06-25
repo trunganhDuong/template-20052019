@@ -1,0 +1,47 @@
+﻿@using Template_RealEstate_20052019.Areas.FrontEnd.Models
+@model List<DesignDetail>
+@using Template_RealEstate_20052019.Models
+@{
+    var templateName = StaticVariables.TemplateName;
+}
+
+@if (Model != null && Model.Any())
+{
+    <!-- Start portfolio Area -->
+    <div id="design" class="about-area portfolio-area area-padding fix section-padding">
+        <div class="container">
+            <div class="page-title text-center">
+                <h1>Thiết kế mặt bằng</h1>
+                <p></p>
+                <hr class="pg-titl-bdr-btm"></hr>
+            </div>
+            <div class="row">
+                <!-- Start Portfolio -page -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <ul id="portfolio-flters">
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            <li class="@(i==0? "filter-active": "")" data-filter=".@Model[i].Filter">
+                                @Model[i].Header
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" id="portfolio-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-10 col-lg-offset-1 col-md-6 portfolio-item @item.Filter">
+                        <img src="@templateName/@item.Images" alt="">
+                        <div class="details">
+                            <h4>@item.Header</h4>
+                            <span>@item.Description</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- awesome-portfolio end -->
+}

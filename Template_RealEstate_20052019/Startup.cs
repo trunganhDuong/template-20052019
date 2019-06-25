@@ -65,6 +65,7 @@ namespace Template_RealEstate_20052019
                 UserType = UserEnum.UserType.Admin,
                 Email = Configuration.GetSection("Contact:Email").Get<string>()
             });
+            StaticVariables.Configuration = Configuration;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -25,13 +25,71 @@
 
   <ItemGroup>
     <Folder Include="Areas\BackEnd\ViewComponents\" />
-    <Folder Include="Areas\FrontEnd\Views\05062019\" />
     <Folder Include="CkfinderData\" />
-    <Folder Include="wwwroot\05062019\" />
     <Folder Include="wwwroot\upload\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\FrontEnd\Views\11062019\Home\Index.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\News\Detail.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Policy\Detail.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Design\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Footer\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Location\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Menu\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\News\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Overview\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Policy\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\RecentPost\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Registration\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Slider\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\Components\Utility\Default.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\_Header.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\_HeaderNews.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\_Layout.cshtml" />
+    <None Include="Areas\FrontEnd\Views\11062019\Shared\_LayoutNews.cshtml" />
+    <None Include="wwwroot\11062019\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\11062019\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\11062019\js\bootstrap.min.js" />
+    <None Include="wwwroot\11062019\js\contactform.js" />
+    <None Include="wwwroot\11062019\js\custom.js" />
+    <None Include="wwwroot\11062019\js\custom.min.js" />
+    <None Include="wwwroot\11062019\js\jquery.easing.min.js" />
+    <None Include="wwwroot\11062019\js\jquery.min.js" />
+    <None Include="wwwroot\11062019\js\main.js" />
+    <None Include="wwwroot\11062019\js\main.min.js" />
+    <None Include="wwwroot\11062019\js\site.js" />
+    <None Include="wwwroot\11062019\js\site.min.js" />
+    <None Include="wwwroot\11062019\js\slick.min.js" />
+    <None Include="wwwroot\11062019\lib\appear\jquery.appear.js" />
+    <None Include="wwwroot\11062019\lib\appear\jquery.appear.min.js" />
+    <None Include="wwwroot\11062019\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\11062019\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\11062019\lib\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\11062019\lib\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\11062019\lib\easing\easing.js" />
+    <None Include="wwwroot\11062019\lib\easing\easing.min.js" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\11062019\lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\11062019\lib\isotope\isotope.pkgd.js" />
+    <None Include="wwwroot\11062019\lib\isotope\isotope.pkgd.min.js" />
+    <None Include="wwwroot\11062019\lib\jquery\jquery.min.js" />
+    <None Include="wwwroot\11062019\lib\knob\jquery.knob.js" />
+    <None Include="wwwroot\11062019\lib\knob\jquery.knob.min.js" />
+    <None Include="wwwroot\11062019\lib\nivo-slider\img\arrow_left.svg" />
+    <None Include="wwwroot\11062019\lib\nivo-slider\img\arrow_right.svg" />
+    <None Include="wwwroot\11062019\lib\nivo-slider\js\jquery.nivo.slider.js" />
+    <None Include="wwwroot\11062019\lib\nivo-slider\js\jquery.nivo.slider.min.js" />
+    <None Include="wwwroot\11062019\lib\owlcarousel\owl.carousel.min.js" />
+    <None Include="wwwroot\11062019\lib\parallax\parallax.js" />
+    <None Include="wwwroot\11062019\lib\parallax\parallax.min.js" />
+    <None Include="wwwroot\11062019\lib\venobox\venobox.min.js" />
+    <None Include="wwwroot\11062019\lib\wow\wow.js" />
+    <None Include="wwwroot\11062019\lib\wow\wow.min.js" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.editorconfig" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.github\ISSUE_TEMPLATE.md" />
     <None Include="wwwroot\admin\lib\bootstrap-datepicker\.github\PULL_REQUEST_TEMPLATE.md" />
@@ -4754,6 +4812,12 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\BackEnd\Views\Policy\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\FrontEnd\Views\05062019\Home\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\FrontEnd\Views\20052019\Home\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\FrontEnd\Views\20052019\Policy\Detail.cshtml">
