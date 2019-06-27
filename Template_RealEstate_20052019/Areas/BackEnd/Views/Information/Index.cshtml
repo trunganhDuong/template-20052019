@@ -1,0 +1,274 @@
+﻿@using Template_RealEstate_20052019.Models
+@model InformationModel
+
+@if (Model != null)
+{
+<section class="padding-15 container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông tin dự án</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="box box-primary">
+                        @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data", @action = Url.Action("ProjectInformation", "Information", new { Area = "BackEnd" }) }))
+                        {
+                            <div class="box-body">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.ProjectName)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.ProjectName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.ProjectName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.ProjectDescription)
+                                    @Html.TextAreaFor(x => x.ProjectInformation.ProjectDescription, new { @id = "txtDescription", @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.ProjectDescription, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.ProjectSlogan)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.ProjectSlogan, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.ProjectSlogan, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.Supplier)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.Supplier, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.Supplier, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.Address)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.Address, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.InvestorName)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.InvestorName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.InvestorName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.Area)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.Area, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.Area, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.FloorArea)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.FloorArea, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.FloorArea, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.ConstructionArea)
+                                    @Html.TextBoxFor(x => x.ProjectInformation.ConstructionArea, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.ConstructionArea, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ProjectInformation.Scale.Description)
+                                    @Html.TextAreaFor(x => x.ProjectInformation.Scale.Description, new { @id = "txtScaleDescription", @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.Scale.Description, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.HiddenFor(x => x.ProjectInformation.Image)
+                                    @Html.LabelFor(x => x.ProjectInformation.Image)
+                                    <input type="file" name="file" />
+                                    @if (!string.IsNullOrEmpty(Model.ProjectInformation.Image))
+                                    {
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <img width="100%" src="~/upload/@Model.ProjectInformation.Image" />
+                                            </div>
+                                        </div>
+                                    }
+                                    @Html.ValidationMessageFor(x => x.ProjectInformation.Image, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Vị trí dự án</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="box box-primary">
+                        @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data", @action = Url.Action("Location", "Information", new { Area = "BackEnd" }) }))
+                        {
+                            <div class="box-body">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.Location.Header)
+                                    @Html.TextBoxFor(x => x.Location.Header, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Location.Header, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.Location.Description)
+                                    @Html.TextAreaFor(x => x.Location.Description, new { @id = "txtLocationDescription", @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Location.Description, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.Location.MapImage)
+                                    @Html.HiddenFor(x => x.Location.MapImage)
+                                    <input type="file" name="mapImage" />
+                                    @if (!string.IsNullOrEmpty(Model.Location.MapImage))
+                                    {
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <img width="100%" src="~/upload/@Model.Location.MapImage" />
+                                            </div>
+                                        </div>
+                                    }
+                                    @Html.ValidationMessageFor(x => x.Location.MapImage, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.Location.NearbyImage)
+                                    @Html.HiddenFor(x => x.Location.NearbyImage)
+                                    <input type="file" name="nearbyImage" />
+                                    @if (!string.IsNullOrEmpty(Model.Location.NearbyImage))
+                                    {
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <img width="100%" src="~/upload/@Model.Location.NearbyImage" />
+                                            </div>
+                                        </div>
+                                    }
+                                    @Html.ValidationMessageFor(x => x.Location.NearbyImage, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông tin liên lạc</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="box box-primary">
+                        @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data", @action = Url.Action("ContactInformation", "Information", new { Area = "BackEnd" }) }))
+                        {
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Phone)
+                                @Html.TextBoxFor(x => x.ContactInformation.Phone, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Phone, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Mobile)
+                                @Html.TextBoxFor(x => x.ContactInformation.Mobile, new { @id = "txtLocationDescription", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Mobile, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Email)
+                                @Html.TextBoxFor(x => x.ContactInformation.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Website)
+                                @Html.TextBoxFor(x => x.ContactInformation.Website, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Website, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Address)
+                                @Html.TextBoxFor(x => x.ContactInformation.Address, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Address, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.District)
+                                @Html.TextBoxFor(x => x.ContactInformation.District, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.District, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.City)
+                                @Html.TextBoxFor(x => x.ContactInformation.City, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.City, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.Country)
+                                @Html.TextBoxFor(x => x.ContactInformation.Country, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.Country, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ContactInformation.MapAddress)
+                                @Html.TextBoxFor(x => x.ContactInformation.MapAddress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ContactInformation.MapAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+@section Scripts
+    {
+    <script type="text/javascript" src="~/admin/lib/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            CKEDITOR.replace("txtDescription");
+            CKEDITOR.replace("txtScaleDescription");
+            CKEDITOR.replace("txtLocationDescription");
+        });
+    </script>
+}

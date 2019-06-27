@@ -55,6 +55,7 @@ namespace Template_RealEstate_20052019
             services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<IUtilityRepository, UtilityRepository>();
             services.AddSingleton<IKeyValueRepository, KeyValueRepository>();
+            services.AddSingleton<IInformationRepository, InformationRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var provider = services.BuildServiceProvider();
             var userRepository = provider.GetService<IUserRepository>();
