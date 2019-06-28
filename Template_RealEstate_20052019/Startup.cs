@@ -59,6 +59,7 @@ namespace Template_RealEstate_20052019
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var provider = services.BuildServiceProvider();
             var userRepository = provider.GetService<IUserRepository>();
+            var infoRepository = provider.GetService<IInformationRepository>();
             userRepository.CreateUser(new User
             {
                 Username = "admin",
@@ -66,7 +67,14 @@ namespace Template_RealEstate_20052019
                 UserType = UserEnum.UserType.Admin,
                 Email = Configuration.GetSection("Contact:Email").Get<string>()
             });
+            StaticVariables.InformationModel = new InformationModel
+            {
+                Location = infoRepository.GetLocation() ?? new Location(),
+                ProjectInformation = infoRepository.GetProjectInformation() ?? new ProjectInformation(),
+                ContactInformation = infoRepository.GetContactInformation() ?? new ContactInformation()
+            };
             StaticVariables.Configuration = Configuration;
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

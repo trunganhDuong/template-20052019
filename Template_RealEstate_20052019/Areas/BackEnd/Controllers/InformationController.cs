@@ -49,9 +49,9 @@ namespace Template_RealEstate_20052019.Areas.BackEnd.Controllers
             {
                 model = new InformationModel
                 {
-                    Location = _informationRepository.GetLocation(),
-                    ContactInformation = _informationRepository.GetContactInformation(),
-                    ProjectInformation = model.ProjectInformation
+                    Location = _informationRepository.GetLocation() ?? new FrontEnd.Models.Location(),
+                    ContactInformation = _informationRepository.GetContactInformation() ?? new Models.ContactInformation(),
+                    ProjectInformation = model.ProjectInformation ?? new FrontEnd.Models.ProjectInformation()
                 };
                 SetPageTitle("Quản lý thông tin website");
 
@@ -86,8 +86,8 @@ namespace Template_RealEstate_20052019.Areas.BackEnd.Controllers
                 model = new InformationModel
                 {
                     Location = model.Location,
-                    ContactInformation = _informationRepository.GetContactInformation(),
-                    ProjectInformation = _informationRepository.GetProjectInformation()
+                    ContactInformation = _informationRepository.GetContactInformation() ?? new Models.ContactInformation(),
+                    ProjectInformation = _informationRepository.GetProjectInformation() ?? new FrontEnd.Models.ProjectInformation()
                 };
                 SetPageTitle("Quản lý thông tin website");
 
@@ -127,9 +127,9 @@ namespace Template_RealEstate_20052019.Areas.BackEnd.Controllers
             {
                 model = new InformationModel
                 {
-                    Location = _informationRepository.GetLocation(),
+                    Location = _informationRepository.GetLocation() ?? new FrontEnd.Models.Location(),
                     ContactInformation = model.ContactInformation,
-                    ProjectInformation = _informationRepository.GetProjectInformation()
+                    ProjectInformation = _informationRepository.GetProjectInformation() ?? new FrontEnd.Models.ProjectInformation()
                 };
                 SetPageTitle("Quản lý thông tin website");
 

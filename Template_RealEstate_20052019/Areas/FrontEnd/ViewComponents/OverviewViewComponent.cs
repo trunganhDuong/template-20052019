@@ -6,21 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Template_RealEstate_20052019.Areas.FrontEnd.Models;
+using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
     public class OverviewViewComponent : BaseViewComponent
     {
-        private readonly IOptions<ProjectInformation> _options;
+        private readonly IInformationRepository _informationRepository;
 
-        public OverviewViewComponent(IOptions<ProjectInformation> options, IConfiguration configuration) : base(configuration)
+        public OverviewViewComponent(IInformationRepository informationRepository, IConfiguration configuration) : base(configuration)
         {
-            this._options = options;
+            this._informationRepository = informationRepository;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(GetViewPath(), _options.Value);
+            return View(GetViewPath(), _informationRepository.GetProjectInformation());
         }
     }
 }

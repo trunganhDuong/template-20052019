@@ -6,21 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Template_RealEstate_20052019.Models;
+using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
     public class RegistrationViewComponent : BaseViewComponent
     {
-        private readonly IOptions<ContactInformation> _options;
+        private readonly IInformationRepository _informationRepository;
 
-        public RegistrationViewComponent(IOptions<ContactInformation> options, IConfiguration configuration) : base(configuration)
+        public RegistrationViewComponent(IInformationRepository informationRepository, IConfiguration configuration) : base(configuration)
         {
-            this._options = options;
+            this._informationRepository = informationRepository;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var contactInfo = _options.Value;
+            var contactInfo = _informationRepository.GetContactInformation();
 
             return View(GetViewPath(), contactInfo);
         }

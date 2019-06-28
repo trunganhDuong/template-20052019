@@ -6,21 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Template_RealEstate_20052019.Areas.FrontEnd.Models;
+using Template_RealEstate_20052019.Repositories;
 
 namespace Template_RealEstate_20052019.Areas.FrontEnd.ViewComponents
 {
     public class LocationViewComponent : BaseViewComponent
     {
-        private readonly IOptions<Location> _option;
+        private readonly IInformationRepository _informationRepository;
 
-        public LocationViewComponent(IOptions<Location> option, IConfiguration configuration) : base(configuration)
+        public LocationViewComponent(IInformationRepository informationRepository, IConfiguration configuration) : base(configuration)
         {
-            this._option = option;
+            this._informationRepository = informationRepository;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(GetViewPath(), _option.Value);
+            return View(GetViewPath(), _informationRepository.GetLocation());
         }
     }
 }

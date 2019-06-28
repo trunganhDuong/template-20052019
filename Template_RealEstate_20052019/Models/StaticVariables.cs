@@ -19,5 +19,7 @@ namespace Template_RealEstate_20052019.Models
                 return string.IsNullOrEmpty(templateName) ? "20052019" : templateName;
             }
         }
+
+        public static InformationModel InformationModel { get; set; }
     }
 }

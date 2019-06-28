@@ -21,10 +21,15 @@ namespace Template_RealEstate_20052019.Repositories
         }
         public ContactInformation GetContactInformation()
         {
+            if (StaticVariables.InformationModel?.ContactInformation != null)
+            {
+                return StaticVariables.InformationModel.ContactInformation;
+            }
+
             var strData = _keyValueRepository.GetByKey(keyContactInformation);
             if (string.IsNullOrEmpty(strData))
             {
-                return new ContactInformation();
+                return null;
             }
 
             return JsonConvert.DeserializeObject<ContactInformation>(strData);
@@ -37,10 +42,15 @@ namespace Template_RealEstate_20052019.Repositories
 
         public Location GetLocation()
         {
+            if (StaticVariables.InformationModel?.Location != null)
+            {
+                return StaticVariables.InformationModel.Location;
+            }
+
             var strData = _keyValueRepository.GetByKey(keyLocation);
             if (string.IsNullOrEmpty(strData))
             {
-                return new Location();
+                return null;
             }
 
             return JsonConvert.DeserializeObject<Location>(strData);
@@ -48,10 +58,15 @@ namespace Template_RealEstate_20052019.Repositories
 
         public ProjectInformation GetProjectInformation()
         {
+            if (StaticVariables.InformationModel?.ProjectInformation != null)
+            {
+                return StaticVariables.InformationModel.ProjectInformation;
+            }
+
             var strData = _keyValueRepository.GetByKey(keyProjectInformation);
             if (string.IsNullOrEmpty(strData))
             {
-                return new ProjectInformation();
+                return null;
             }
 
             return JsonConvert.DeserializeObject<ProjectInformation>(strData);
@@ -64,6 +79,12 @@ namespace Template_RealEstate_20052019.Repositories
                 return false;
             }
 
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+
+            StaticVariables.InformationModel.ContactInformation = contactInformation;
             _keyValueRepository.Save(keyContactInformation, JsonConvert.SerializeObject(contactInformation));
 
             return true;
@@ -76,6 +97,12 @@ namespace Template_RealEstate_20052019.Repositories
                 return false;
             }
 
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+
+            StaticVariables.InformationModel.Location = location;
             _keyValueRepository.Save(keyLocation, JsonConvert.SerializeObject(location));
 
             return true;
@@ -88,6 +115,12 @@ namespace Template_RealEstate_20052019.Repositories
                 return false;
             }
 
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+
+            StaticVariables.InformationModel.ProjectInformation = projectInformation;
             _keyValueRepository.Save(keyProjectInformation, JsonConvert.SerializeObject(projectInformation));
 
             return true;

@@ -36,7 +36,7 @@
                             @if (!string.IsNullOrEmpty(Model.MapImage))
                             {
                                 <a href="#">
-                                    <img src="@templateName/@Model.MapImage" alt="">
+                                    <img src="/upload/@Model.MapImage" alt="">
                                 </a>
                             }
                         </div>
@@ -49,7 +49,7 @@
             {
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
-                        <img src="@templateName/@Model.NearbyImage" alt="" />
+                        <img src="/upload/@Model.NearbyImage" alt="" />
                     </div>
                 </div>
             }
