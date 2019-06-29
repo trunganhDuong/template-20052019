@@ -16,5 +16,7 @@ namespace Template_RealEstate_20052019.Repositories
         bool SaveProjectInformation(ProjectInformation projectInformation);
         ContactInformation GetContactInformation();
         bool SaveContactInformation(ContactInformation contactInformation);
+        SeoModel GetSeoModel();
+        bool SaveSeoModel(SeoModel model);
     }
 }

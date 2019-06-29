@@ -47,5 +47,10 @@ namespace Template_RealEstate_20052019.Areas.FrontEnd.Controllers
         {
             return $"~/Areas/FrontEnd/Views/{TemplateName}/{GetType().Name.Replace("Controller", "")}/{viewName}";
         }
+
+        protected void SetMetadata(string metadata)
+        {
+            ViewBag.Metadata = metadata;
+        }
     }
 }

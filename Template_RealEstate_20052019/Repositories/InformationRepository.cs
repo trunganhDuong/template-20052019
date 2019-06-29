@@ -13,6 +13,7 @@ namespace Template_RealEstate_20052019.Repositories
         private const string keyProjectInformation = "PROJECT_INFORMATION";
         private const string keyContactInformation = "CONTACT_INFORMATION";
         private const string keyLocation = "LOCATION";
+        private const string keySeo = "SEO";
         private readonly IKeyValueRepository _keyValueRepository;
 
         public InformationRepository(IKeyValueRepository keyValueRepository)
@@ -32,7 +33,14 @@ namespace Template_RealEstate_20052019.Repositories
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<ContactInformation>(strData);
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+            var result = JsonConvert.DeserializeObject<ContactInformation>(strData);
+            StaticVariables.InformationModel.ContactInformation = result;
+
+            return result;
         }
 
         public List<DesignDetail> GetListDesign()
@@ -53,7 +61,14 @@ namespace Template_RealEstate_20052019.Repositories
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<Location>(strData);
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+            var result = JsonConvert.DeserializeObject<Location>(strData);
+            StaticVariables.InformationModel.Location = result;
+
+            return result;
         }
 
         public ProjectInformation GetProjectInformation()
@@ -69,7 +84,37 @@ namespace Template_RealEstate_20052019.Repositories
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<ProjectInformation>(strData);
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+            var result = JsonConvert.DeserializeObject<ProjectInformation>(strData);
+            StaticVariables.InformationModel.ProjectInformation = result;
+
+            return result;
+        }
+
+        public SeoModel GetSeoModel()
+        {
+            if (StaticVariables.SeoModel != null)
+            {
+                return StaticVariables.SeoModel;
+            }
+
+            var strData = _keyValueRepository.GetByKey(keySeo);
+            if (string.IsNullOrEmpty(strData))
+            {
+                return null;
+            }
+
+            if (StaticVariables.InformationModel == null)
+            {
+                StaticVariables.InformationModel = new InformationModel();
+            }
+            var result = JsonConvert.DeserializeObject<SeoModel>(strData);
+            StaticVariables.SeoModel = result;
+
+            return result;
         }
 
         public bool SaveContactInformation(ContactInformation contactInformation)
@@ -122,6 +167,24 @@ namespace Template_RealEstate_20052019.Repositories
 
             StaticVariables.InformationModel.ProjectInformation = projectInformation;
             _keyValueRepository.Save(keyProjectInformation, JsonConvert.SerializeObject(projectInformation));
+
+            return true;
+        }
+
+        public bool SaveSeoModel(SeoModel model)
+        {
+            if (model == null)
+            {
+                return false;
+            }
+
+            if (StaticVariables.SeoModel == null)
+            {
+                StaticVariables.SeoModel = new SeoModel();
+            }
+
+            StaticVariables.SeoModel = model;
+            _keyValueRepository.Save(keySeo, JsonConvert.SerializeObject(model));
 
             return true;
         }

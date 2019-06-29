@@ -1,0 +1,39 @@
+﻿@using Template_RealEstate_20052019.Models
+@model SeoModel
+
+@if (Model != null)
+{
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Title)
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Keywords)
+                                @Html.TextBoxFor(x => x.Keywords, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Keywords, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Description)
+                                @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

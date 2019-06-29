@@ -21,5 +21,7 @@ namespace Template_RealEstate_20052019.Models
         }
 
         public static InformationModel InformationModel { get; set; }
+
+        public static SeoModel SeoModel { get; set; }
     }
 }

@@ -73,6 +73,7 @@ namespace Template_RealEstate_20052019
                 ProjectInformation = infoRepository.GetProjectInformation() ?? new ProjectInformation(),
                 ContactInformation = infoRepository.GetContactInformation() ?? new ContactInformation()
             };
+            StaticVariables.SeoModel = infoRepository.GetSeoModel();
             StaticVariables.Configuration = Configuration;
 
         }
